@@ -1,6 +1,8 @@
 <template>
 <div id="" class="">
-    <b-navbar toggleable="lg" class="nav-sty fixed-top" type="dark" style="background-color:#0d0d0d">
+    <b-navbar toggleable="lg" class="nav-sty fixed-top"  style="background: rgb(157,154,168);
+    background: linear-gradient(90deg, rgba(157,154,168,1) 0%, rgba(218,218,223,1) 0%, rgba(246,233,233,1) 20%, rgba(0,212,255,1) 24%, rgba(1,1,6,1) 90%);">
+        
         <b-container fluid>
             <b-nav>
                 <img src="https://examsdaily.in/wp-content/uploads/2020/12/examsdaily-new-png-png.png" alt="" style="width:200px;" />
@@ -10,8 +12,8 @@
                     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                     <b-nav class="" justified right>
                         <b-collapse id="nav-collapse" is-nav>
-                            <b-nav-item href="#1" active><i class="h4 mb-2 bi bi-house-door-fill"></i><br> Home</b-nav-item>
-                            <b-nav-item typle="link" href="https://tamil.examsdaily.in/"><i class="h4 mb-2 bi bi-browser-chrome"></i><br>Website</b-nav-item>
+                            <b-nav-item href="#1"><i class="h4 mb-2 bi bi-house-door-fill" style="color:beige"></i><br> Home</b-nav-item>
+                            <b-nav-item typle="link" href="https://tamil.examsdaily.in/"><i class="h4 mb-2 bi bi-browser-chrome" style="color:beige"></i><br>Website</b-nav-item>
 
                             <!-- <div>
                                 <b-dropdown text="Profile">
@@ -27,7 +29,7 @@
                             <div>
                                 <b-dropdown variant="link" toggle-class="text-decoration-none" no-caret>
                                     <template #button-content>
-                                        <i class="h4 bi bi-person-circle "></i><br>Profile
+                                        <i class="h4 bi bi-person-circle " style="color:beige"></i><br>Profile
                                     </template>
                                     <b-dropdown-item href="#">
                                     
@@ -89,5 +91,13 @@ export default ({
 </script>
 
 <style>
-
+.nav-bk{
+ 
+    background: #40E0D0;
+     
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+     
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+     
+    }
     </style>

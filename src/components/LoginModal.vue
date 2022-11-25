@@ -18,22 +18,25 @@
        <div class="text-center">
            <b-button v-if="submit" pill style="padding:10px 60px; border-radius: 26px;" type="submit" v-on:click="login()">Submit</b-button><br>
            <a class="d-flex align-items-center justify-content-center pb-4" href="#!" style="color:white">Forgot password?</a>
-           
+           <b-button v-if="update"  pill style="padding:10px 60px; border-radius: 26px;" type="button" @click="final()">Update</b-button>
+
        </div>
        
    </div >
    <!-- <b-modal v-if="form2"  id="modalForm2" hide-footer style="height:50px"> -->
     <div v-if="form2">
+        <b-table striped hover :items="users" :fields="fields">
+            <template v-slot:cell(actions)="data" >
+                <b-button size="sm" @click="edit(data.item)" class="mr-1" variant="warning">
+                    Edit
+                   </b-button>
+            </template>
+            
+        </b-table>
+     
+      <b-button  id="submit" type="button" @click="add()">ADD</b-button>
 
-        <b-table :items="users"   responsive="sm">
-            <template v-slot:cell()="user">
-                <b-button size="sm" @click="edit(user)" class="mr-1" variant="warning">
-                 Edit
-                </b-button>
-              
-              </template>
-      
-
+    </div>
 
     <!-- <template #modal-footer="{ login }">
 
@@ -45,24 +48,6 @@
                   
                  
                     <!-- <b-button  v-if="update"  pill style="padding:10px 60px; border-radius: 26px;" type="button" @click="final()">Update</b-button> -->
-                    
-                        <tr>
-                            <td>Serial.No</td>
-                            <td>Username</td>
-                            <td>Email</td>
-                            <td>MobileNo</td>
-                            <td>Password</td>
-                            <td v-if="tableHide">ConfirmPassword</td>
-            
-                        </tr>
-            
-                        <div v-for="(value,index,key) in users" v-bind:key="key">
-                            <b-td>{{ index + 1 }}</b-td>
-                            <b-td>{{ value.username }}</b-td>
-                            <b-td>{{ value.email }}</b-td>
-                            <b-td>{{ value.mobile }}</b-td>
-                            <b-td>{{ value.password }}</b-td>
-                            <b-td v-if="tableHide">{{ value.cpassword }}</b-td>
                             
                             <!-- <template #cell(actions)="row">
                                 <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
@@ -75,20 +60,18 @@
                                 <!-- <button id="submit" type="button" @click="edit(value)">Edit</button></td> -->
                                 
             
-                            </div>
+                           
                         <br>
                       
                         <!-- <b-button id="submit" type="button" @click="add()">ADD</b-button> -->
             
-                        <b-button  id="submit" type="button" @click="add()">ADD
-                        </b-button>
-                        <b-button  v-if="update"  pill style="padding:10px 60px; border-radius: 26px;" type="button" @click="final()">Update</b-button>
+                      
                      
-                    </b-table>
+                  
                   
                  <!-- </b-modal>
                 -->
-            </div>
+    
 </div>
 </template>
 
@@ -108,19 +91,50 @@ export default ({
             submit: true,
             update: false,
             pwdHide: true,
-            tableHide: true,
+          
             input: {
                 Username: "",
                 Email: "",
                 MobileNo: "",
                 Password: "",
                 ConfirmPassword: "",
-                editIndex: 0,
-                index:""
+                editIndex: "",
+               
 
             },
             users: [],
-           
+            fields: 
+            [
+            {
+                key:'username',
+                label:'Username'
+            },
+            {
+                key:'email',
+                label:'Email'
+            },
+            {
+                key:'mobile',
+                label:'Mobile'
+            },
+              {
+                key:'password',
+                label:'Password'
+            },
+            {
+                key:'cpassword',
+                label:'Cpassword'
+            },
+            {
+                key:'editindex',
+                label:'editIndex'
+            },
+            {
+                key:'actions',
+                label:'Actions'
+            }
+            ],
+
         }
     },
 
@@ -327,7 +341,6 @@ export default ({
             this.submit = true;
             this.update = false;
             this.pwdHide = true;
-            this.tableHide = true;
 
             this.input.Username = "";
             this.input.Email = "";
@@ -343,7 +356,7 @@ export default ({
             this.form1 = true;
             this.form2 = false;
             this.pwdHide = false;
-
+          
             this.input.Username = user.username;
             this.input.Email = user.email;
             this.input.MobileNo = user.mobile;
@@ -365,15 +378,16 @@ export default ({
 
                     e.email = this.input.Email;
                     e.mobile = this.input.MobileNo;
-                    e.password = this.input.Password;
-
+                    e.password = this.input.Password,this.input.ConfirmPassword;
+             
                 }
 
             });
 
-            this.tableHide = false;
+          
             this.form1 = false;
             this.form2 = true;
+
         }
     }
 })

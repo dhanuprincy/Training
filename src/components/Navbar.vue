@@ -1,20 +1,31 @@
 <template>
 <div id="" class="">
-    <b-navbar toggleable="lg" class="nav-sty fixed-top"  style="background: rgb(157,154,168);
-    background: linear-gradient(90deg, rgba(157,154,168,1) 0%, rgba(218,218,223,1) 0%, rgba(246,233,233,1) 20%, rgba(0,212,255,1) 24%, rgba(1,1,6,1) 90%);">
+    <b-navbar toggleable="lg" class="nav-sty fixed-top"  style="background: rgb(217,212,72);
+    background: linear-gradient(90deg, rgba(217,212,72,1) 8%, rgba(134,134,128,1) 62%); ">
         
         <b-container fluid>
             <b-nav>
-                <img src="https://examsdaily.in/wp-content/uploads/2020/12/examsdaily-new-png-png.png" alt="" style="width:200px;" />
+                <b-img src="../static/ed.jpg" alt="" style="width:50px;"></b-img>
             </b-nav>
-            <b-navbar-nav id="navbrand" href="#" class="mx-2 ms-auto">
-                <b-nav>
+            
+            <b-navbar-nav id="navbrand" href="#" class="">
                     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-                    <b-nav class="" justified right>
                         <b-collapse id="nav-collapse" is-nav>
-                            <b-nav-item href="#1"><i class="h4 mb-2 bi bi-house-door-fill" style="color:beige"></i><br> Home</b-nav-item>
-                            <b-nav-item typle="link" href="https://tamil.examsdaily.in/"><i class="h4 mb-2 bi bi-browser-chrome" style="color:beige"></i><br>Website</b-nav-item>
+                            
+                            
+                      <i class="h3 mb-2 bi bi-house-door-fill"></i><router-link to="/RegForm" class=" nav-item nav-link" >Home</router-link>
+                      <i class="h3 mb-2 bi bi-info-circle"></i> <b-link href="https://tamil.examsdaily.in/" class="nav-item nav-link">About</b-link>
+                      <i class="h3 mb-2 bi bi-hourglass-split"></i> <router-link to="/Careers" class="nav-link">Careers</router-link>
+                      <i class="h3 mb-2 bi bi-telephone"></i> <router-link to="/Contact" class="nav-link">Contact</router-link>
+                      <b-navbar-nav class="py-2">
+                        <!-- <b-nav-form> -->
 
+                        <b-input type="text" size="md" class="text-black" placeholder="Search" aria-label="Search"></b-input>
+                        <b-btn inline="transparent" size="md" class="text-white m-1 " variant="link" toggle-class="text-decoration-none" no-caret type="submit"><i class="bi bi-search "></i></b-btn>
+                        <!-- rounded-circle bg-danger  -->
+                        <!-- </b-nav-form> -->
+                    </b-navbar-nav>
+              
                             <!-- <div>
                                 <b-dropdown text="Profile">
                                     <template #button-content>
@@ -29,7 +40,7 @@
                             <div>
                                 <b-dropdown variant="link" toggle-class="text-decoration-none" no-caret>
                                     <template #button-content>
-                                        <i class="h4 bi bi-person-circle " style="color:beige"></i><br>Profile
+                                        <i class="h1 bi bi-person-fill" style="color:yellow"></i><br>
                                     </template>
                                     <b-dropdown-item href="#">
                                     
@@ -41,24 +52,14 @@
                                     <b-dropdown-item href="#">Log Out</b-dropdown-item>
 
                                     <b-modal id="modal-center" size="lg" hide-footer style="height:50px">
-                                       <LoginModal    />
+                                       <LoginModal />
                                      
                                     </b-modal>
 
                                 </b-dropdown>
                             </div>
-                            <b-navbar-nav class="py-2">
-                                <!-- <b-nav-form> -->
-
-                                <b-input type="text" size="md" class="text-black m-1" placeholder="Search" aria-label="Search"></b-input>
-                                <b-btn inline="transparent" size="md" class="text-white m-1 " variant="link" toggle-class="text-decoration-none" no-caret type="submit"><i class="bi bi-search "></i></b-btn>
-                                <!-- rounded-circle bg-danger  -->
-                                <!-- </b-nav-form> -->
-                            </b-navbar-nav>
-                        </b-collapse>
-
-                    </b-nav>
-                </b-nav>
+                           
+            </b-collapse>
             </b-navbar-nav>
         </b-container>
 
@@ -91,13 +92,7 @@ export default ({
 </script>
 
 <style>
-.nav-bk{
- 
-    background: #40E0D0;
-     
-    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-     
-    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-     
-    }
+.nav-link {
+    margin-right: 150px;
+}
     </style>

@@ -264,20 +264,24 @@ export default ({
                             editindex: this.users.length + 1,
 
                         });
-                        alert("Thank You for Login! Successfully Registered! ");
+                        // alert("Thank You for Login! Successfully Registered! ");
+                        Swal.fire({
+                        icon: 'success',
+                        title: 'Thank You for Login! Successfully Registered! '
+                    })
                         console.log("Data==========", this.users);
                         this.form1 = false;
                         this.form2 = true;
 
                     } else if (isEmailFound == true) {
 
-                        alert("The specified email id is aleady exist");
+                        // alert("The specified email id is aleady exist");
 
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'The specified email id is aleady exist',
-                        })
+                        // Swal.fire({
+                        //     icon: 'error',
+                        //     title: 'Oops...',
+                        //     text: 'The specified email id is aleady exist',
+                        // })
                         Toast.fire({
                             icon: 'warning',
                             title: 'The specified email id is aleady exist',
@@ -285,13 +289,13 @@ export default ({
 
                     } else {
 
-                         alert("The specified mobile number is aleady exist");
+                        //  alert("The specified mobile number is aleady exist");
 
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'The specified mobile number is aleady exist',
-                        })
+                        // Swal.fire({
+                        //     icon: 'error',
+                        //     title: 'Oops...',
+                        //     text: 'The specified mobile number is aleady exist',
+                        // })
                         Toast.fire({
                             icon: 'warning',
                             title: 'The specified mobile number is aleady exist',
@@ -378,9 +382,13 @@ export default ({
 
                     e.email = this.input.Email;
                     e.mobile = this.input.MobileNo;
-                    e.password = this.input.Password,this.input.ConfirmPassword;
+                    e.password = this.input.Password; 
              
-                }
+                } 
+                Swal.fire({
+                        icon: 'success',
+                        title: 'Done'
+                    })
 
             });
 

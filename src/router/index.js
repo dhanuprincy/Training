@@ -5,6 +5,7 @@ import RegForm from '@/components/Regform'
 import Important from '@/components/Important'
 import Boostrap from '@/components/Boostrap'
 import MyProject from '@/components/MyProject'
+import Grid from '@/components/Grid'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/MyProject',
       name: 'MyProject',
       component: MyProject
+    },
+    {
+      path: '/Grid',
+      name: 'Grid',
+      component: Grid
     }    
   ]
 })

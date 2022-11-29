@@ -8,7 +8,7 @@
 
     <div class="bg-image" style="
         background-image: url('../static/computer.jpg'); background-repeat: no-repeat; background-size:100% 100%; height: 100vh;">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height:100%; width:100%;margin-top:50px;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height:100%; width:100%;">
 
             <b-container fluid>
                 <div style="padding:150px;">
@@ -57,4 +57,5 @@ export default {
 
 <style>
 
-    </style>
+
+</style>

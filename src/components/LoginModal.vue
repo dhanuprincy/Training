@@ -1,6 +1,9 @@
 <template>
 <div>
+
    <div  v-if="form1">
+    
+    <b-modal id="modal-center" size="lg" hide-footer style="height:50px"></b-modal>
 
 <h4 v-if="update">You are ready to editing your details here!</h4>
        <h1 v-if="submit" class="mb-3">REGISTERATION FORM</h1>
@@ -35,8 +38,10 @@
         </b-table>
      
       <b-button  id="submit" type="button" @click="add()">ADD</b-button>
+      
 
     </div>
+    
 
     <!-- <template #modal-footer="{ login }">
 

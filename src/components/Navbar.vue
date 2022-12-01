@@ -52,7 +52,7 @@
                                     <b-dropdown-item href="#">Log Out</b-dropdown-item>
 
                                     <b-modal id="modal-center" size="lg" hide-footer style="height:50px">
-                                       <LoginModal />
+                                       <!-- <LoginModal /> -->
                                      
                                     </b-modal>
 
